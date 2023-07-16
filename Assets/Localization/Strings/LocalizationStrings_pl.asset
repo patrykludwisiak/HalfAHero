@@ -1,0 +1,218 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: LocalizationStrings_pl
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: pl
+  m_SharedData: {fileID: 11400000, guid: bc726f1420e842142a0ade4f61dd2d47, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 363519410176
+    m_Localized: "Jak b\u0119dziemy si\u0119 tak oci\u0105ga\u0107 to niezd\u0105\u017Cymy
+      na wieczorny festiwal."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3582865833984
+    m_Localized: Hehe.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3607196991488
+    m_Localized: "Uuuu. Kto\u015B si\u0119 nie\u017Ale rozbi\u0142."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3620622958592
+    m_Localized: Hmmmpf!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3626629201920
+    m_Localized: "Tam co\u015B le\u017Cy ko\u0142o tego szkieletu. Da\u0142by\u015B
+      rad\u0119 po to skoczy\u0107?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3629175144448
+    m_Localized: "Emmm, mo\u017Ce dlatego \u017Ce mam ci\u0119\u017Cki kryszta\u0142
+      wskrzeszenia na plechach?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3630643150848
+    m_Localized: "Dasz se rad\u0119."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3631314239488
+    m_Localized: "No, \u0142adna tarcza. Troch\u0119 zardzewia\u0142a, ale b\u0119dzie
+      git."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3631964356608
+    m_Localized: "A teraz chod\u017A, bo si\u0119 faktycznie sp\xF3\u017Animy."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3632513810432
+    m_Localized: "Eeee, tu chyba nie powinno tak wia\u0107."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3633113595904
+    m_Localized: "Tu za wzg\xF3rzem jest \u015Bwi\u0105tynia i to chyba z tamt\u0105d
+      jest ten wiatr."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3634350915584
+    m_Localized: "Naprawd\u0119!? Akurat tutaj drzewo musia\u0142o si\u0119 zawali\u0107!?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3634812289024
+    m_Localized: "Dasz rad\u0119 to rozbi\u0107 tarcz\u0105?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3635168804864
+    m_Localized: O CHOLERA! DUCHY!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3635512737792
+    m_Localized: "Dobra, stamt\u0105d poni\u017Cej powinno wia\u0107, ale przej\u015Bcie
+      jest zablokowane."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3635831504896
+    m_Localized: "Mo\u017Ce tymi runami da\u0142oby si\u0119 otworzy\u0107 przej\u015Bcie."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3636137689088
+    m_Localized: "No i \u015Bwietnie!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3636515176448
+    m_Localized: "AAAA! Jest ich wi\u0119cej!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3636808777728
+    m_Localized: "Manipuluj\u0105 co\u015B przy tym krysztale! To pewnie on powoduje
+      ten wiatr!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3637098184704
+    m_Localized: "Musimy go zniszczy\u0107! Zajmij si\u0119 tym, a ja b\u0119d\u0119
+      chroni\u0142 ty\u0142y!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3637437923328
+    m_Localized: "Uciekajmy st\u0105d!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3637756690432
+    m_Localized: "Uff! Uda\u0142o si\u0119! Przesta\u0142o te\u017C wia\u0107."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3638046097408
+    m_Localized: "Mo\u017Cemy w ko\u0144cu p\xF3j\u015B\u0107 na festiwal."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3638377447424
+    m_Localized: "CO TU SI\u0118 STA\u0141O!?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3638692020224
+    m_Localized: Spadaj!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3639019175936
+    m_Localized: A czemu nie ty!?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3639291805696
+    m_Localized: A ja nie mam nogi!?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3639677681664
+    m_Localized: "Sk\u0105d tak wieje?"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3639950311424
+    m_Localized: "Wi\u0119c tam chod\u017Cmy."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3640331993088
+    m_Localized: Ehhh.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3640604622848
+    m_Localized: O CHOLERA!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3641254739968
+    m_Localized: "Przytrzymaj LPM, by na\u0142adowa\u0107 atak i pu\u015B\u0107 by
+      zaatakowa\u0107."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3641019858944
+    m_Localized: "Przytrzymaj PPM, by na\u0142adowa\u0107 skok i pu\u015B\u0107 by
+      skoczy\u0107."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3641846136832
+    m_Localized: "Naci\u015Bnij F lub dodatkowy przycisk myszy, by podo\u015Bi\u0107
+      bro\u0144 i przedmioty."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3642211041280
+    m_Localized: "Naci\u015Bnij k\xF3\u0142ko od myszy aby u\u017Cy\u0107 aktywnego
+      przedmiotu lub naci\u015Bnij R b\u0105d\u017C dodatkowy przycisk myszy by go
+      upu\u015Bci\u0107."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3642466893824
+    m_Localized: "Zwyk\u0142y kamie\u0144. Mo\u017Cesz nim zrobi\u0119 par\u0119
+      siniak\xF3w."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3642911490048
+    m_Localized: "Wygl\u0105da jak runa ziemi. S\u0142ysza\u0142em, \u017Ce nie\u017Ale
+      dzia\u0142aja jak chcesz co\u015B przesun\u0105\u0107."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3643184119808
+    m_Localized: "Z daleka czu\u0107 jej ciep\u0142o, wi\u0119c to pewnie runa ognia.
+      M\xF3g\u0142by\u015B ni\u0105 roztopi\u0107 nawet wielkie lodowce."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3643515469824
+    m_Localized: "Ale to mokre! Zapewne to runa wody. Kto\u015B, kiedy\u015B chcia\u0142
+      ni\u0105 podtopi\u0107 ca\u0142\u0105 wiosk\u0119."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4189550936064
+    m_Localized: "Schowaj t\u0119 run\u0119 powietrza do kieszeni, bo powodujesz
+      przeci\u0105g!\r"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4191111217152
+    m_Localized: 'Wynik: '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4192440811520
+    m_Localized: 'Combo: '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4193829126144
+    m_Localized: "Poleg\u0142e\u015B! Naci\u015Bnij przycisk by si\u0119 odrodzi\u0107."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4253405020160
+    m_Localized: "Gratulacje! Uko\u0144czy\u0142e\u015B tutorial! Naci\u015Bnij ESC
+      by wyj\u015B\u0107."
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

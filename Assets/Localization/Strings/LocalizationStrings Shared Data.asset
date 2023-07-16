@@ -1,0 +1,204 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: LocalizationStrings Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: LocalizationStrings
+  m_TableCollectionNameGuidString: bc726f1420e842142a0ade4f61dd2d47
+  m_Entries:
+  - m_Id: 363519410176
+    m_Key: nivekTutorial1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3582865833984
+    m_Key: nivekTutorial2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3607196991488
+    m_Key: nivekTutorial3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3620622958592
+    m_Key: nivekTutorial4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3626629201920
+    m_Key: nivekTutorial5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3629175144448
+    m_Key: nivekTutorial6
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3630643150848
+    m_Key: nivekTutorial7
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3631314239488
+    m_Key: nivekTutorial8
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3631964356608
+    m_Key: nivekTutorial9
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3632513810432
+    m_Key: nivekTutorial10
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3633113595904
+    m_Key: nivekTutorial11
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3634350915584
+    m_Key: nivekTutorial12
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3634812289024
+    m_Key: nivekTutorial13
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3635168804864
+    m_Key: nivekTutorial14
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3635512737792
+    m_Key: nivekTutorial15
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3635831504896
+    m_Key: nivekTutorial16
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3636137689088
+    m_Key: nivekTutorial17
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3636515176448
+    m_Key: nivekTutorial18
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3636808777728
+    m_Key: nivekTutorial19
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3637098184704
+    m_Key: nivekTutorial20
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3637437923328
+    m_Key: nivekTutorial21
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3637756690432
+    m_Key: nivekTutorial22
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3638046097408
+    m_Key: nivekTutorial23
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3638377447424
+    m_Key: nivekTutorial24
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3638692020224
+    m_Key: playerTutorial1
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3639019175936
+    m_Key: playerTutorial2
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3639291805696
+    m_Key: playerTutorial3
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3639677681664
+    m_Key: playerTutorial4
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3639950311424
+    m_Key: playerTutorial5
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3640331993088
+    m_Key: playerTutorial6
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3640604622848
+    m_Key: playerTutorial7
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3641019858944
+    m_Key: tutorialBMP
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3641254739968
+    m_Key: tutorialLMP
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3641846136832
+    m_Key: tutorialPickingUp
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3642211041280
+    m_Key: tutorialUsingItems
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3642466893824
+    m_Key: itemStone
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3642911490048
+    m_Key: itemEarthRune
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3643184119808
+    m_Key: itemFireRune
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3643515469824
+    m_Key: itemWaterRune
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4189550936064
+    m_Key: itemWindRune
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4191111217152
+    m_Key: scoreInfo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4192440811520
+    m_Key: comboInfo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4193829126144
+    m_Key: deadInfo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4253405020160
+    m_Key: endInfo
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 2989487703383343129
+  references:
+    version: 2
+    RefIds:
+    - rid: 2989487703383343129
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1689036801949

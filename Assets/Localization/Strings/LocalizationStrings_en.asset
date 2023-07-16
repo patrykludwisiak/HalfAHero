@@ -1,0 +1,206 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: LocalizationStrings_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: bc726f1420e842142a0ade4f61dd2d47, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 363519410176
+    m_Localized: If we keep slacking like that, we won't get to the festival any
+      time soon.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3582865833984
+    m_Localized: Oh really?.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3607196991488
+    m_Localized: Ouch! Someone crashed their boat on the river.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3620622958592
+    m_Localized: Hmmmpf!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3626629201920
+    m_Localized: We might salvage something from it. Can you jump over there?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3629175144448
+    m_Localized: Hmmmm, maybe because I have to carry that huge ressurection crystal?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3630643150848
+    m_Localized: You'll be fine.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3631314239488
+    m_Localized: Nice shield. A bit rusty, but it will do.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3631964356608
+    m_Localized: Now let's go, or we'll really be late.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3632513810432
+    m_Localized: Hmmm, it shouldn't be so windy here.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3633113595904
+    m_Localized: There is a ruined temple behind that hill, and I think that's the
+      source of this wind.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3634350915584
+    m_Localized: Really?! A tree had to fall right here!?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3634812289024
+    m_Localized: Can you smash it with your shield?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3635168804864
+    m_Localized: O SHOOT! GHOSTS!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3635512737792
+    m_Localized: Ok, the wind should be coming from down there, but our passage is
+      blocked.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3635831504896
+    m_Localized: Maybe we could open a way with those runes.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3636137689088
+    m_Localized: Great!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3636515176448
+    m_Localized: AAAA! More of them!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3636808777728
+    m_Localized: They're manipulating that crystal! It is probably causing that wind!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3637098184704
+    m_Localized: We must destroy it! Take care of that and I'll watch your back!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3637437923328
+    m_Localized: Let's get out of here!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3637756690432
+    m_Localized: Off! We've done it! And it's no longer blowing.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3638046097408
+    m_Localized: Maybe we can finally get on that festival.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3638377447424
+    m_Localized: WHAT THE HECK HAPPEND HERE!?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3638692020224
+    m_Localized: I am just keeping your tempo!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3639019175936
+    m_Localized: Why won't you do that!?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3639291805696
+    m_Localized: And I don't have a leg!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3639677681664
+    m_Localized: Where's it coming from?
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3639950311424
+    m_Localized: Let's go there then.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3640331993088
+    m_Localized: Ehhh.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3640604622848
+    m_Localized: OH CRAP!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3641019858944
+    m_Localized: Hold BMP to load jump, then realese to jump.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3641254739968
+    m_Localized: Hold LMP to load attack, then realese to attack.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3641846136832
+    m_Localized: Press F or additional mouse button to pick up weapons and items.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3642211041280
+    m_Localized: Press mouse scroll to use active item or press R / additional mouse
+      button to drop it.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3642466893824
+    m_Localized: Just a rock. You could hit someone with that... or something.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3642911490048
+    m_Localized: Looks like the earth rune. Heard, they are good to move something.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3643184119808
+    m_Localized: I feel that heat from afar, so it must be the fire rune. You could
+      melt an iceberg with that.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 3643515469824
+    m_Localized: It's so wet! It's probably a water rune. Someone almost drowned
+      our village with that.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4189550936064
+    m_Localized: Put down this wind rune! You're creating a draft with that!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4191111217152
+    m_Localized: 'Score: '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4192440811520
+    m_Localized: 'Combo: '
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4193829126144
+    m_Localized: You died! Press the button to respawn.
+    m_Metadata:
+      m_Items: []
+  - m_Id: 4253405020160
+    m_Localized: Congratulations! You have completed the demo! Press the "esc" button
+      to exit.
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

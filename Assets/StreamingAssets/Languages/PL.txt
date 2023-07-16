@@ -1,0 +1,48 @@
+nivekTutorial1=Jak będziemy się tak ociągać to niezdążymy na wieczorny festiwal.
+nivekTutorial2=Hehe.
+nivekTutorial3=Uuuu. Ktoś się nieźle rozbił.
+nivekTutorial4=Hmmmpf!
+nivekTutorial5=Tam coś leży koło tego szkieletu. Dałbyś radę po to skoczyć?
+nivekTutorial6=Emmm, może dlatego że mam ciężki kryształ wskrzeszenia na plechach?
+nivekTutorial7=Dasz se radę.
+nivekTutorial8=No, ładna tarcza. Trochę zardzewiała, ale będzie git.
+nivekTutorial9=A teraz chodź, bo się faktycznie spóźnimy.
+nivekTutorial10=Eeee, tu chyba nie powinno tak wiać.
+nivekTutorial11=Tu za wzgórzem jest świątynia i to chyba z tamtąd jest ten wiatr.
+nivekTutorial12=Naprawdę!? Akurat drzewo musiało się tu zawalić!?
+nivekTutorial13=Dasz radę to rozbić tarczą?
+nivekTutorial14=O CHOLERA! DUCHY!
+nivekTutorial15=Dobra, stamtąd poniżej powinno wiać, ale przejście jest zablokowane.
+nivekTutorial16=Może tymi runami dałoby się otworzyć przejście.
+nivekTutorial17=No i świetnie!
+nivekTutorial18=AAAA! Jeszcze ich więcej!
+nivekTutorial19=Manipulują coś przy tym krysztale! To pewnie on powoduje ten wiatr!
+nivekTutorial20=Musimy go zniszczyć! Zajmij się tym, a ja będę chronił tyły!
+nivekTutorial21=Uciekajmy stąd!
+nivekTutorial22=Uff! Udało się! Już też nie wieje.
+nivekTutorial23=Możemy w końcu pójść na festiwal.
+nivekTutorial24=CO TU SIĘ STAŁO!?
+
+playerTutorial1=Spadaj!
+playerTutorial2=A czemu nie ty!?
+playerTutorial3=A ja nie mam nogi!?
+playerTutorial4=Skąd tak wieje?
+playerTutorial5=Więc tam chodżmy.
+playerTutorial6=Ehhh.
+playerTutorial7=O CHOLERA!
+
+tutorialBMP=Przytrzymaj PPM, by naładować skok i puść by skoczyć.
+tutorialLMP=Przytrzymaj LPM, by naładować atak i puść by zaatakować.
+tutorialPickingUp=Naciśnij F lub dodatkowy przycisk myszy, by podośić broń i przedmioty.
+tutorialUsingItems=Naciśnij kółko od myszy aby użyć aktywnego przedmiotu lub naciśnij R bądż dodatkowy przycisk myszy by go upuścić.
+
+itemStone=Zwykły kamień. Możesz nim zrobię parę siniaków.
+itemEarthRune=Wygląda jak runa ziemi. Słyszałem, że nieźle działaja jak chcesz coś przesunąć.
+itemFireRune=Z daleka czuć jej ciepło, więc to pewnie runa ognia. Mógłbyś nią roztopić nawet wielkie lodowce.
+itemWaterRune=Ale to mokre! Zapewne to runa wody. Ktoś, kiedyś chciał nią podtopić całą wioskę.
+itemWindRune=Schowaj tę runę powietrza do kieszeni, bo powodujesz przeciąg!
+
+scoreInfo=Wynik: 
+comboInfo=Combo: 
+deadInfo=Poległeś! Naciśnij przycisk by się odrodzić.
+endInfo=Gratulacje! Ukończyłeś tutorial! Naciśnij ESC by wyjść.

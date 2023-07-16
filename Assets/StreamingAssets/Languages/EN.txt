@@ -1,0 +1,48 @@
+nivekTutorial1=If we keep slacking like that, we won't get to the festival any time soon.
+nivekTutorial2=Oh really?.
+nivekTutorial3=Ouch! Someone crashed their boat on the river.
+nivekTutorial4=Hmmmpf!
+nivekTutorial5=We might salvage something from it. Can you jump over there?
+nivekTutorial6=Hmmmm, maybe because I have to carry that huge ressurection crystal?
+nivekTutorial7=You'll be fine.
+nivekTutorial8=Nice shield. A bit rusty, but it will do.
+nivekTutorial9=Now let's go, or we'll really be late.
+nivekTutorial10=Hmmm, it shouldn't be so windy here.
+nivekTutorial11=There is a ruined temple behind that hill, and I think that's the source of this wind.
+nivekTutorial12=Really?! A tree had to fall right here!?
+nivekTutorial13=Can you smash it with your shield?
+nivekTutorial14=O SHOOT! GHOSTS!
+nivekTutorial15=Ok, the wind should be coming from down there, but our passage is blocked.
+nivekTutorial16=Maybe we could open a way with those runes.
+nivekTutorial17=Great!
+nivekTutorial18=AAAA! More of them!
+nivekTutorial19=They're manipulating that crystal! It is probably causing that wind!
+nivekTutorial20=We must destroy it! Take care of that and I'll watch your back!
+nivekTutorial21=Let's get out of here!
+nivekTutorial22=Off! We've done it! And it's no longer blowing.
+nivekTutorial23=Maybe we can finally get on that festival.
+nivekTutorial24=WHAT THE HECK HAPPEND HERE!?
+
+playerTutorial1=I am just keeping your tempo!
+playerTutorial2=Why don't you do that!?
+playerTutorial3=And I don't have a leg!
+playerTutorial4=Where's it coming from?
+playerTutorial5=Let's go there then.
+playerTutorial6=Ehhh.
+playerTutorial7=OH CRAP!
+
+tutorialBMP=Hold BMP to load jump, then realese to jump.
+tutorialLMP=Hold LMP to load attack, then realese to attack.
+tutorialPickingUp=Press F or additional mouse button to pick up weapons and items.
+tutorialUsingItems=Press mouse scroll to use active item or press R / additional mouse button to drop it.
+
+itemStone=Just a rock. You could hit someone with that... or something.
+itemEarthRune=Looks like the earth rune. Heard, they are good to move something.
+itemFireRune=I feel that heat from afar, so it must be the fire rune. You could melt an iceberg with that.
+itemWaterRune=It's so wet! It's probably a water rune. Someone almost drowned our village with that.
+itemWindRune=Put down this wind rune! You're creating a draft with that!
+
+scoreInfo=Score: 
+comboInfo=Combo: 
+deadInfo=You died! Press the button to respawn.
+endInfo=Congratulations! You have completed the demo! Press the "esc" button to exit.
