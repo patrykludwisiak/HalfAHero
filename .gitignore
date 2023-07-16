@@ -73,3 +73,7 @@ crashlytics-build.properties
 
 # Unused old files
 /[Aa]ssets/[Ss]cripts/[Uu]nused/*
+
+# Plastic
+/.plastic/
+/ignore.conf
