@@ -14,7 +14,7 @@ public class IceCrash : Crash
 
         if (col.tag == "Enemy" && remainingTime > 0 && attackedEnemies.IndexOf(col) == -1)
         {
-            col.GetComponentInParent<Statistics>().DealDamage(damage, AttackTypes.Water);
+            col.GetComponentInParent<Statistics>().GetDamage(damage, AttackTypes.Water);
             attackedEnemies.Add(col);
             //col.GetComponentInParent<Rigidbody2D>().velocity = directionVector * 2.0f;
             if (col && !col.GetComponent<Slow>())

@@ -9,7 +9,7 @@ public class FireProjBehaviour : RuneProjectile
     {
         if (collision.gameObject.name.Equals("BurnableWall"))
         {
-            collision.GetComponent<EnemyStatistics>().DealDamage(1);
+            collision.GetComponent<EnemyStatistics>().GetDamage(1);
             Destroy(gameObject);
         }
     }

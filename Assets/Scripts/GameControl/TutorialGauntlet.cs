@@ -85,15 +85,15 @@ public class TutorialGauntlet : MonoBehaviour
         if (!dialog1 && nivekPatrol.GetPatrolIndex() == 10 && gauntletStart)
         {
             nivekPatrol.SetBreakPoint(11);
-            dialogController.AddTextToQueue("Nivek", "nivekTutorial18", 2f);
+            /*dialogController.AddTextToQueue("Nivek", "nivekTutorial18", 2f);
             dialogController.AddTextToQueue("Nivek", "nivekTutorial19", 4f);
-            dialogController.AddTextToQueue("Nivek", "nivekTutorial20", 4f);
+            dialogController.AddTextToQueue("Nivek", "nivekTutorial20", 4f);*/
             dialog1 = true;
         }
         if(!dialog2 && gauntletEnd)
         {
             nivekPatrol.SetBreakPoint(13);
-            dialogController.AddTextToQueue("Nivek", "nivekTutorial21", 2f);
+            //dialogController.AddTextToQueue("Nivek", "nivekTutorial21", 2f);
             dialog2 = true;
         }
     }

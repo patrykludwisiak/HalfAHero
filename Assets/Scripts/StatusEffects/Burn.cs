@@ -22,7 +22,7 @@ public class Burn : StatusEffect
         countdown -= Time.deltaTime;
         if (countdown <= 0)
         {
-            gameObject.GetComponent<Statistics>().DealDamage(damage, AttackTypes.Fire);
+            gameObject.GetComponent<Statistics>().GetDamage(damage, AttackTypes.Fire);
             countdown = timeBetweenDamage;
         }
         return base.Effect();

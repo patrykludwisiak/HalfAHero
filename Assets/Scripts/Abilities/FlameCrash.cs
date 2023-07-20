@@ -18,7 +18,7 @@ public class FlameCrash : Crash
 
         if (col.CompareTag("Enemy") && remainingTime > 0 && attackedEnemies.IndexOf(col) == -1)
         {
-            col.GetComponentInParent<Statistics>().DealDamage(damage, AttackTypes.Fire);
+            col.GetComponentInParent<Statistics>().GetDamage(damage, AttackTypes.Fire);
             attackedEnemies.Add(col);
             //col.GetComponentInParent<Rigidbody2D>().velocity = directionVector * 2.0f;
             if (col)

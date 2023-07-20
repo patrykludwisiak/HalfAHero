@@ -15,6 +15,8 @@ public class Statistics : MonoBehaviour
 
     public delegate void OnDeath();
     public OnDeath onDeath;
+    public delegate void OnHealthChange();
+    public OnHealthChange onHealthChange;
 
     public float GetMaxHealth()
     {
@@ -29,11 +31,13 @@ public class Statistics : MonoBehaviour
     public void ResetHealth()
     {
         health = maxHealth;
+        onHealthChange.Invoke();
     }
 
-    public void DealDamage(float damage)
+    public void GetDamage(float damage)
     {
         health -= damage;
+        onHealthChange.Invoke();
         if (gameObject)
         {
             FindObjectOfType<SpawnParticles>().SpawnBloodParticles(transform.position);
@@ -49,22 +53,22 @@ public class Statistics : MonoBehaviour
         return scorePoints;
     }
 
-    public void DealDamage(float damage, AttackTypes attackType)
+    public void GetDamage(float damage, AttackTypes attackType)
     {
         if (vulnerability != AttackTypes.Normal)
         {
             if (attackType == vulnerability)
             {
-                DealDamage(damage * vulnerabilityValue / 100);
+                GetDamage(damage * vulnerabilityValue / 100);
             }
             else
             {
-                DealDamage(damage * (100 - resistanceValue));
+                GetDamage(damage * (100 - resistanceValue));
             }
         }
         else
         {
-            DealDamage(damage);
+            GetDamage(damage);
         }
     }
 

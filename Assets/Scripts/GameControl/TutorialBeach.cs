@@ -1,37 +1,35 @@
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Localization;
 
+[System.Serializable]
 
 public class TutorialBeach : MonoBehaviour
 {
-    Teleport caveInTeleport;
-    Teleport caveExitTeleport;
-    GameObject player;
-    GameObject nivek;
-    GameObject enemy1;
-    GameObject enemy2;
-    GameObject gauntletWall;
+    [SerializeField] Teleport caveInTeleport;
+    [SerializeField] Teleport caveExitTeleport;
+    [SerializeField] GameObject nivek;
+    [SerializeField] GameObject enemy1;
+    [SerializeField] GameObject enemy2;
+    [SerializeField] GameObject gauntletWall;
+    [SerializeField] DialogController dialogController;
+    [SerializeField] Patrol nivekPatrol;
+    [SerializeField] Prompt prompt;
+    [SerializeField] DialogObject startDialog;
+    [SerializeField] DialogObject stoneJumpingDialog;
+    [SerializeField] DialogObject shieldDialog;
+    [SerializeField] DialogObject windDialog;
+    [SerializeField] DialogObject treeDialog;
+    [SerializeField] DialogObject seeGhostsDialog;
+    [SerializeField] DialogObject killedGhostsDialog;
+    [SerializeField] DialogObject wallDialog;
     Inventory playerInventory;
-    Patrol nivekPatrol;
-    Prompt prompt;
-    DialogController dialogController;
     bool pickedUp, treeUp, dialog1, dialog2, dialog3, dialog4, dialog5, dialog6, dialog7, dialog8, prompt1, prompt2, prompt3, prompt4;
 
     private void Start()
     {
         dialog1 = dialog2 = dialog3 = dialog4 = dialog5 = dialog6 = dialog7 = dialog8 = prompt1 = prompt2 = prompt3 = prompt4 = false;
-        caveInTeleport = GameObject.Find("CaveIn").GetComponent<Teleport>();
-        caveExitTeleport = GameObject.Find("CaveExit").GetComponent<Teleport>();
-        nivek = GameObject.Find("Nivek");
-        player = GameObject.FindGameObjectWithTag("Player");
-        playerInventory = player.GetComponentInChildren<Inventory>();
-        enemy1 = GameObject.Find("MeleeEnemyBeforeGauntlet");
-        enemy2 = GameObject.Find("RangedEnemyBeforeGauntlet");
-        gauntletWall = GameObject.Find("GauntletWall");
-        nivekPatrol = nivek.GetComponent<Patrol>();
-        dialogController = Camera.main.GetComponent<DialogController>();
-        dialogController.AddDialogObject("Nivek");
-        dialogController.AddDialogObject("Ifer");
-        prompt = Camera.main.GetComponent<Prompt>();
+        playerInventory = GameData.inventory;
         pickedUp = false;
         treeUp = true;
     }
@@ -47,10 +45,7 @@ public class TutorialBeach : MonoBehaviour
         if (!dialog1)
         {
             nivekPatrol.SetBreakPoint(1);
-            dialogController.AddTextToQueue("Nivek", "nivekTutorial1", 3f);
-            dialogController.AddTextToQueue("Ifer", "playerTutorial1", 1f);
-            dialogController.AddTextToQueue("Nivek", "nivekTutorial2", 0.8f);
-            dialogController.AddTextToQueue("Nivek", "nivekTutorial3", 2f);
+            dialogController.AddDialogToQueue(startDialog);
             dialog1 = true;
         }
 
@@ -70,13 +65,7 @@ public class TutorialBeach : MonoBehaviour
         if (!dialog2 && nivekPatrol.GetPatrolIndex() == 1 && nivekPatrol.IsStopped() && dialogController.IsEmpty())
         {
             nivekPatrol.SetBreakPoint(2);
-            dialogController.AddTextToQueue("Nivek", "nivekTutorial4", 1f);
-            dialogController.AddTextToQueue("Nivek", "nivekTutorial5", 3f);
-            dialogController.AddTextToQueue("Ifer", "playerTutorial2", 2f);
-            dialogController.AddTextToQueue("Nivek", "nivekTutorial6", 2f);
-            dialogController.AddTextToQueue("Ifer", "playerTutorial3", 2f);
-            dialogController.AddTextToQueue("Nivek", "nivekTutorial7", 1.5f);
-            dialogController.AddTextToQueue("Ifer", "playerTutorial6", 1f);
+            dialogController.AddDialogToQueue(stoneJumpingDialog);
 
             dialog2 = true;
         }
@@ -97,18 +86,13 @@ public class TutorialBeach : MonoBehaviour
         if (!dialog3 && nivekPatrol.GetPatrolIndex() == 2 && pickedUp)
         {
             nivekPatrol.SetBreakPoint(4);
-            dialogController.AddTextToQueue("Nivek", "nivekTutorial4", 1f);
-            dialogController.AddTextToQueue("Nivek", "nivekTutorial8", 2f);
-            dialogController.AddTextToQueue("Nivek", "nivekTutorial9", 3f);
+            dialogController.AddDialogToQueue(shieldDialog);
             dialog3 = true;
         }
 
         if (!dialog4 && nivekPatrol.GetPatrolIndex() == 4 && nivekPatrol.IsStopped())
         {
-            dialogController.ForceAddTextToQueue("Nivek", "nivekTutorial10", 2.5f);
-            dialogController.AddTextToQueue("Ifer", "playerTutorial4", 2f);
-            dialogController.AddTextToQueue("Nivek", "nivekTutorial11", 3.5f);
-            dialogController.AddTextToQueue("Ifer", "playerTutorial5", 1.5f);
+            dialogController.AddDialogToQueue(windDialog);
             dialog4 = true;
         }
 
@@ -119,8 +103,7 @@ public class TutorialBeach : MonoBehaviour
 
         if(!dialog5 && treeUp && nivekPatrol.GetPatrolIndex() == 6 && nivekPatrol.IsStopped())
         {
-            dialogController.AddTextToQueue("Nivek", "nivekTutorial12", 2.5f);
-            dialogController.AddTextToQueue("Nivek", "nivekTutorial13", 2f);
+            dialogController.AddDialogToQueue(treeDialog);
             dialog5 = true;
         }
         
@@ -144,14 +127,13 @@ public class TutorialBeach : MonoBehaviour
         }
         if(!dialog6 && nivekPatrol.GetPatrolIndex() == 8 && caveInTeleport.GetTeleportTimes() > 0)
         {
-            dialogController.AddTextToQueue("Nivek", "nivekTutorial14", 2.5f);
+            dialogController.AddDialogToQueue(seeGhostsDialog);
             dialog6 = true;
         }
         if (!dialog7 && nivekPatrol.GetPatrolIndex() == 8 && !enemy1 && !enemy2)
         {
             nivekPatrol.SetBreakPoint(9);
-            dialogController.ForceAddTextToQueue("Nivek", "nivekTutorial15", 4f);
-            dialogController.AddTextToQueue("Nivek", "nivekTutorial16", 3f);
+            dialogController.AddDialogToQueue(killedGhostsDialog);
             dialog7 = true;
         }
 
@@ -171,7 +153,7 @@ public class TutorialBeach : MonoBehaviour
         if (!dialog8 && nivekPatrol.GetPatrolIndex() == 9 && !gauntletWall)
         {
             nivekPatrol.SetBreakPoint(10);
-            dialogController.AddTextToQueue("Nivek", "nivekTutorial17", 2f);
+            dialogController.AddDialogToQueue(wallDialog);
             dialog8 = true;
         }
     }

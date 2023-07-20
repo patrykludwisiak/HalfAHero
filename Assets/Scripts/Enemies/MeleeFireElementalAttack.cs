@@ -77,7 +77,7 @@ public class MeleeFireElementalAttack : MonoBehaviour
                 {
                     if (stats.IsInRange() && attackTickTimer <=0)
                     {
-                        playerStats.DealDamage(stats.GetAttack(), AttackTypes.Fire);
+                        playerStats.GetDamage(stats.GetAttack(), AttackTypes.Fire);
                         attackTickTimer = attackTick;
                     }
                     attackTickTimer -= Time.deltaTime;

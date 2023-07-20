@@ -38,7 +38,7 @@ public class Prompt : MonoBehaviour
         if(textProperty != "")
         {
             this.textProperty = textProperty;
-            text = ReadLanguageFile.ReadText(textProperty, language);
+            //text = ReadLanguageFile.ReadText(textProperty, language);
         }
         else
         {

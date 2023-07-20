@@ -1,143 +1,126 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Localization;
+using UnityEngine.Localization.Settings;
+using UnityEngine.UI;
+using TMPro;
 
 public class DialogController : MonoBehaviour
 {
-    Dictionary<string,Dialog> dialogObjects;
-    public List<string> dialogs;
-    public List<string> texts;
-    public List<float> timers;
+    [SerializeField] GameObject dialogCanvas;
+    [SerializeField] TextMeshProUGUI dialogText;
+    [SerializeField] Image dialogCharacterImage;
     float timer;
-    bool empty, realEmpty;
-    string language;
-    Collider2D player;
+    float timerCap;
+    List<DialogLine> dialogQueue;
+
+    public delegate void OnDialogAdd();
+    public OnDialogAdd onDialogAdd;
+    public delegate void OnDialogLineEnd();
+    public OnDialogLineEnd onDialogLineEnd;
+    public delegate void OnDialogEnd();
+    public OnDialogEnd onDialogEnd;
 
     // Start is called before the first frame update
     void Start()
     {
-        dialogObjects = new Dictionary<string, Dialog>();
-        empty = true;
-        realEmpty = true;
-        dialogs = new List<string>();
-        texts = new List<string>();
-        timers = new List<float>();
+        dialogQueue = new List<DialogLine>();
         timer = 0;
+        timerCap = 0;
+        onDialogAdd += ShowDialogScreen;
+        onDialogLineEnd += SetNewDialog;
+        onDialogEnd += HideDialogScreen;
+        LocalizationSettings.SelectedLocaleChanged += Reload;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (timer > 0)
+        if(dialogQueue.Count > 0)
         {
-            timer -= Time.deltaTime;
+            if(timer < timerCap)
+            {
+                timer += Time.deltaTime;
+            }
+            else
+            {
+                onDialogLineEnd.Invoke();
+            }
+        }
+    }
+
+    void ShowDialogScreen()
+    {
+        dialogCanvas.SetActive(true);
+    }
+
+    void HideDialogScreen()
+    {
+        dialogCanvas.SetActive(false);
+    }
+
+    void SetNewDialog()
+    {
+        dialogQueue.RemoveAt(0);
+        timer = 0;
+        if (dialogQueue.Count > 0)
+        {
+            SetDialogValues(dialogQueue[0]);
         }
         else
         {
-            if (!empty)
-            {
-                Dialog dialog = dialogObjects[dialogs[0]];
-                dialog.SetNormalDialog(false);
-                dialog.SetText("");
-                dialogs.RemoveAt(0);
-                texts.RemoveAt(0);
-                timers.RemoveAt(0);
-            }
-            if (texts.Count > 0)
-            {
-                Dialog dialog = dialogObjects[dialogs[0]];
-                timer = timers[0];
-                dialog.SetNormalDialog(true);
-                dialog.SetText(texts[0]);
-                empty = false;
-                realEmpty = false;
-            }
-            else if (texts.Count == 0 && empty == false)
-            {
-                empty = true;
-                realEmpty = true;
-            }
+            timerCap = 0;
+            onDialogEnd.Invoke();
         }
     }
 
-    public void AddDialogObject(string gameObjectName)
+    void SetDialogValues(DialogLine line)
     {
-        dialogObjects.Add(gameObjectName, GameObject.Find(gameObjectName).transform.Find("Dialog").GetComponent<Dialog>());
+        timerCap = line.time;
+        dialogText.text = line.text.GetLocalizedString();
+        Sprite sprite = line.characterDialogSprite;
+        if (sprite)
+        {
+            dialogCharacterImage.sprite = sprite;
+        }
     }
 
-    public void AddTextToQueue(string gameObjectName, string textProperty, float timer)
+    void Reload(Locale locale)
     {
-        dialogs.Add(gameObjectName);
-        texts.Add(textProperty);
-        timers.Add(timer);
+        dialogText.text = dialogQueue[0].text.GetLocalizedString();
     }
 
-    public void ForceAddTextToQueue(string gameObjectName, string textProperty, float timer)
+    public void AddDialogToQueue(DialogObject dialogObject)
     {
-        ClearQueue();
-        AddTextToQueue(gameObjectName, textProperty, timer);
+        if(dialogObject.isForced)
+        {
+            ClearQueue();
+        }
+        dialogQueue.AddRange(dialogObject.dialog);
+        onDialogAdd.Invoke();
     }
 
     public void ClearQueue()
     {
-        if (dialogs.Count > 0)
-        {
-            Dialog dialog = dialogObjects[dialogs[0]];
-            dialog.SetNormalDialog(false);
-            dialog.SetText("");
-        }
-        dialogs.Clear();
-        texts.Clear();
-        timers.Clear();
+        dialogQueue.Clear();
         timer = 0;
-        empty = true;
-        realEmpty = false;
-    }
-
-    public string GetText()
-    {
-        return texts[0];
-    }
-
-    public string GetText(int index)
-    {
-        return texts[index];
-    }
-
-    public void SetTimer(float timer)
-    {
-        this.timer = timer;
-    }
-
-    public float GetTimer(int index)
-    {
-        return timers[index];
-    }
-
-    public float GetTimer()
-    {
-        return timer;
+        timerCap = 0;
     }
 
     public bool IsEmpty()
     {
-        if(realEmpty && dialogs.Count == 0)
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
+        return dialogQueue.Count == 0;
     }
 
-    public string GetDialog()
+    public DialogLine GetDialog()
     {
-        return dialogs[0];
+        return dialogQueue[0];
     }
 
-    public string GetDialog(int index)
+    public DialogLine GetDialog(int index)
     {
-        return dialogs[index];
+        return dialogQueue[index];
     }
+
 }

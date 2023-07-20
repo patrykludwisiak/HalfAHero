@@ -16,7 +16,7 @@ public class StoneProjectileBehaviour : RuneProjectile
 
         if(collision.tag == "Enemy")
         {
-            collision.GetComponent<Statistics>().DealDamage(damage);
+            collision.GetComponent<Statistics>().GetDamage(damage);
             Destroy(gameObject);
         }
     }

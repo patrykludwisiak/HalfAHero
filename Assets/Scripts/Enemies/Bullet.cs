@@ -47,7 +47,7 @@ public class Bullet : MonoBehaviour
                 if(abilitiesOvertime[i].cooldown >= damageCooldown)
                 {
                     abilitiesOvertime[i].ResetCooldown();
-                    abilitiesOvertime[i].enemy.GetComponent<Statistics>().DealDamage(damage, attackType);
+                    abilitiesOvertime[i].enemy.GetComponent<Statistics>().GetDamage(damage, attackType);
                 }
             }
         }
@@ -82,7 +82,7 @@ public class Bullet : MonoBehaviour
         {
             if(!destroyOnTime)
             {
-                col.GetComponentInParent<Statistics>().DealDamage(damage);
+                col.GetComponentInParent<Statistics>().GetDamage(damage);
                 Destroy(gameObject);
             }
             else

@@ -24,7 +24,7 @@ public class AttackDash : Dash
                     {
                         FindObjectOfType<GameControl>().Stop();
                         GameObject.Find("Ifer").GetComponent<PlayerStatistics>().AddAbilityCharge(10.0f);
-                        target.DealDamage(damage, attackType);
+                        target.GetDamage(damage, attackType);
                         FindObjectOfType<AudioManager>().Play("EnemyHitWithShield");
                     }
                 }

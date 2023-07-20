@@ -66,7 +66,7 @@ public class EnemyMeeleAttack : MonoBehaviour
             {
                 if (stats.IsInRange())
                 {
-                    playerStats.DealDamage(stats.GetAttack());
+                    playerStats.GetDamage(stats.GetAttack());
                 }
                 stats.ChangeAttacking();
                 attackBreakTimer = attackBreak;

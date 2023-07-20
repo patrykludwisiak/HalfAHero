@@ -2,18 +2,18 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Localization;
-using UnityEngine.Localization.Tables;
+using UnityEngine.Localization.Settings;
 using TMPro;
 
 public class PlayerDeath : MonoBehaviour
 {
     [SerializeField] GameObject deathScreen;
-    [SerializeField] TextMeshPro text;
+    [SerializeField] TextMeshProUGUI text;
     [SerializeField] LocalizedString localString;
     private void Start()
     {
         GameData.playerStats.onDeath += ShowDeathScreen;
-        localString.StringChanged += Reload;
+        LocalizationSettings.SelectedLocaleChanged += Reload;
     }
 
     public void ShowDeathScreen()
@@ -22,8 +22,8 @@ public class PlayerDeath : MonoBehaviour
         GameData.player.SetActive(false);
     }
 
-    public void Reload(string newString)
+    public void Reload(Locale locale)
     {
-        text.text = newString;
+        text.text = localString.GetLocalizedString();
     }
 }

@@ -35,7 +35,7 @@ public class ShieldSwipe : MonoBehaviour
 
         if (col.tag == "Enemy" && !attackedEnemies.Contains(col.gameObject))
         {
-            col.GetComponentInParent<Statistics>().DealDamage(damage, GetComponentInParent<Weapons>().GetAttackType());
+            col.GetComponentInParent<Statistics>().GetDamage(damage, GetComponentInParent<Weapons>().GetAttackType());
             attackedEnemies.Add(col.gameObject);
             //col.GetComponentInParent<Rigidbody2D>().velocity = directionVector * 2.0f;
             if (!col.GetComponent<Knockback>())

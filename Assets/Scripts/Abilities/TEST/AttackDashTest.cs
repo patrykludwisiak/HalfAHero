@@ -24,7 +24,7 @@ public class AttackDashTest : DashTest
                 if(enemies[i])
                 {
                     Camera.main.GetComponent<GameControl>().Stop();
-                    enemies[i].GetComponent<EnemyStatistics>().DealDamage(damage, weapon.GetAttackType());
+                    enemies[i].GetComponent<EnemyStatistics>().GetDamage(damage, weapon.GetAttackType());
                     FindObjectOfType<AudioManager>().Play("EnemyHitWithShield");
                     enemies.RemoveAt(i);
                     i--;

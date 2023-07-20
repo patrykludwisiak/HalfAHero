@@ -109,7 +109,7 @@ public class MeleeIceElementalAttack : MonoBehaviour
             {
                 if (meleeCollision)
                 {
-                    playerStats.DealDamage(meleeDamage, AttackTypes.Water);
+                    playerStats.GetDamage(meleeDamage, AttackTypes.Water);
                 }
                 stats.ChangeAttacking(false);
                 meleeAttackBreakTimer = meleeAttackBreak;

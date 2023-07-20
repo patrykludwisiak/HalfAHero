@@ -18,11 +18,11 @@ public class Score : MonoBehaviour
         {
             fontSize = 40
         };
-        comboInfo = ReadLanguageFile.ReadText("comboInfo", language);
+        //comboInfo = ReadLanguageFile.ReadText("comboInfo", language);
     }
 
     public void Reload()
     {
-        comboInfo = ReadLanguageFile.ReadText("comboInfo", language);
+        //comboInfo = ReadLanguageFile.ReadText("comboInfo", language);
     }
 }

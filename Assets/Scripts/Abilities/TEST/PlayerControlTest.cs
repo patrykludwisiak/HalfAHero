@@ -20,6 +20,7 @@ public class PlayerControlTest : MonoBehaviour
         {"S", "SE", "E", "NE", "N", "NW", "W", "SW"};
     [SerializeField] private Rigidbody2D rigidBody;
     [SerializeField] private GameObject arrow;
+    [SerializeField] private Transform HealthBar;
 
     private void Awake()
     {
@@ -30,6 +31,7 @@ public class PlayerControlTest : MonoBehaviour
         stats = GetComponent<PlayerStatistics>();
         inventory = gameObject.GetComponentInChildren<Inventory>();
         playerRenderer = gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>();
+        stats.onHealthChange += UpdateHealthBar;
     }
 
     private void Update()
@@ -63,6 +65,11 @@ public class PlayerControlTest : MonoBehaviour
         }
     }
     
+    void UpdateHealthBar()
+    {
+        HealthBar.localScale = new Vector3(stats.GetHealth() / stats.GetMaxHealth(), 1f, 1f);
+    }
+
     public static int GetAngleIndexOfEight(Vector3 normalizedVector)
     {
         int value = Mathf.FloorToInt((Vector2.SignedAngle(Vector2.up, normalizedVector) + 202.5f) / 45f);

@@ -28,7 +28,7 @@ public class TutorialEnd : MonoBehaviour
             alignment = TextAnchor.MiddleCenter,
             fontSize = 40
         };
-        endInfo = ReadLanguageFile.ReadText("endInfo", language);
+        //endInfo = ReadLanguageFile.ReadText("endInfo", language);
     }
 
     private void Update()
@@ -36,14 +36,14 @@ public class TutorialEnd : MonoBehaviour
         if (!dialog1 && nivekPatrol.GetPatrolIndex() == 13 && templeOutTeleport.GetTeleportTimes() > 0)
         {
             nivekPatrol.SetBreakPoint(15);
-            dialogController.AddTextToQueue("Nivek", "nivekTutorial22", 3f);
-            dialogController.AddTextToQueue("Nivek", "nivekTutorial23", 3f);
+            //dialogController.AddTextToQueue("Nivek", "nivekTutorial22", 3f);
+            //dialogController.AddTextToQueue("Nivek", "nivekTutorial23", 3f);
             dialog1 = true;
         }
         if (!dialog2 && gotToEnd)
         {
-            dialogController.ForceAddTextToQueue("Ifer", "playerTutorial7", 1f);
-            dialogController.AddTextToQueue("Nivek", "nivekTutorial24", 2f);
+            //dialogController.ForceAddTextToQueue("Ifer", "playerTutorial7", 1f);
+            //dialogController.AddTextToQueue("Nivek", "nivekTutorial24", 2f);
             dialog2 = true;
         }
         if(gotToEnd && dialogController.IsEmpty())

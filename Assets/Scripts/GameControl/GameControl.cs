@@ -1,9 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Localization;
+using UnityEngine.Localization.Settings;
 
 public class GameControl : MonoBehaviour
 {
+    public static GameControl gameControl;
+
+    private void Start()
+    {
+        gameControl = this;
+    }
+
     void Update()
     {
         foreach (FadeAway footStep in GameData.footSteps)
@@ -45,4 +54,8 @@ public class GameControl : MonoBehaviour
         GameData.hitStopped = false;
     }
 
+    public void ChangeLanguage(string locale)
+    {
+        LocalizationSettings.SelectedLocale = LocalizationSettings.AvailableLocales.GetLocale(locale);
+    }
 }

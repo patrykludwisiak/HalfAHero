@@ -46,7 +46,7 @@ public class ShieldSwipeTest : AbilityTest
         {
             foreach(GameObject enemy in attackedEnemies)
             {
-                enemy.GetComponent<Statistics>().DealDamage(damage, weapon.GetAttackType());
+                enemy.GetComponent<Statistics>().GetDamage(damage, weapon.GetAttackType());
                 if (!enemy.GetComponent<Knockback>())
                 {
                     Vector2 knockback = Vector3.Normalize(enemy.transform.position - weapon.GetPlayerTransform().position);

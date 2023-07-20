@@ -5,7 +5,6 @@ using UnityEngine;
 public class Dialog : MonoBehaviour
 {
     Inventory playerInventory;
-    GameControl gameControl;
     GUIStyle style;
     Rect rect;
     string text;
@@ -20,49 +19,8 @@ public class Dialog : MonoBehaviour
     {
         text = "";
         textProperty = "";
-        gameControl = Camera.main.GetComponent<GameControl>();
-        playerInventory = GameObject.Find("Ifer").GetComponentInChildren<Inventory>();
         normalDialog = false;
-        style = new GUIStyle
-        {
-            fontStyle = FontStyle.Bold,
-            alignment = TextAnchor.LowerCenter,
-            fontSize = 20,
-            wordWrap = true
-        };
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        Vector2 position = Camera.main.WorldToScreenPoint(transform.position);
-        rect = new Rect(position.x - 125f, Screen.height - position.y - 200f, 250f, 100f);
-        /*if(player && !normalDialog)
-        {
-            GameObject item = playerInventory.GetCurrentItem();
-            if (item)
-            {
-                string description = item.GetComponent<Item>().GetDescription();
-                if (text != description)
-                {
-                    text = description;
-                }
-            }
-        }
-        else*/ if (!normalDialog)
-        {
-            text = "";
-        }
-    }
-
-    private void OnGUI()
-    {
-        if (text != "")
-        {
-            GUIFunctions.DrawOutline(rect, text, style, Color.black, Color.white);
-        }
-    }
-
     public void SetText(string text)
     {
         if(text != "")

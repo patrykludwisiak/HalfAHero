@@ -6,6 +6,7 @@ public static class GameData
 {
     public static GameObject player;
     public static PlayerStatistics playerStats;
+    public static Inventory inventory;
     public static bool dead = false, isEnd = false;
     public static List<GameObject> enemiesOnScene;
     public static bool hitStopped = false;

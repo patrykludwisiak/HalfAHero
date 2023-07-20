@@ -30,6 +30,11 @@ public class Inventory : MonoBehaviour
     float thirdHoldTime;
     float fourthHoldTime;
 
+    private void Awake()
+    {
+        GameData.inventory = this;    
+    }
+
     void Start()
     {
         weaponSlot = GameObject.Find("Weapon1");
