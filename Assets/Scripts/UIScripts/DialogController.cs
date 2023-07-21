@@ -15,12 +15,12 @@ public class DialogController : MonoBehaviour
     float timerCap;
     List<DialogLine> dialogQueue;
 
-    public delegate void OnDialogAdd();
-    public OnDialogAdd onDialogAdd;
-    public delegate void OnDialogLineEnd();
-    public OnDialogLineEnd onDialogLineEnd;
-    public delegate void OnDialogEnd();
-    public OnDialogEnd onDialogEnd;
+    public delegate void OnDialogAddHandler();
+    public event OnDialogAddHandler OnDialogAdd;
+    public delegate void OnDialogLineEndHandler();
+    public event OnDialogLineEndHandler OnDialogLineEnd;
+    public delegate void OnDialogEndHandler();
+    public event OnDialogEndHandler OnDialogEnd;
 
     // Start is called before the first frame update
     void Start()
@@ -28,9 +28,9 @@ public class DialogController : MonoBehaviour
         dialogQueue = new List<DialogLine>();
         timer = 0;
         timerCap = 0;
-        onDialogAdd += ShowDialogScreen;
-        onDialogLineEnd += SetNewDialog;
-        onDialogEnd += HideDialogScreen;
+        OnDialogAdd += ShowDialogScreen;
+        OnDialogLineEnd += SetNewDialog;
+        OnDialogEnd += HideDialogScreen;
         LocalizationSettings.SelectedLocaleChanged += Reload;
     }
 
@@ -45,7 +45,7 @@ public class DialogController : MonoBehaviour
             }
             else
             {
-                onDialogLineEnd.Invoke();
+                OnDialogLineEnd.Invoke();
             }
         }
     }
@@ -71,7 +71,7 @@ public class DialogController : MonoBehaviour
         else
         {
             timerCap = 0;
-            onDialogEnd.Invoke();
+            OnDialogEnd.Invoke();
         }
     }
 
@@ -98,7 +98,7 @@ public class DialogController : MonoBehaviour
             ClearQueue();
         }
         dialogQueue.AddRange(dialogObject.dialog);
-        onDialogAdd.Invoke();
+        OnDialogAdd.Invoke();
     }
 
     public void ClearQueue()

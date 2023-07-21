@@ -12,7 +12,7 @@ public class PlayerDeath : MonoBehaviour
     [SerializeField] LocalizedString localString;
     private void Start()
     {
-        GameData.playerStats.onDeath += ShowDeathScreen;
+        GameData.playerStats.OnDeath += ShowDeathScreen;
         LocalizationSettings.SelectedLocaleChanged += Reload;
     }
 

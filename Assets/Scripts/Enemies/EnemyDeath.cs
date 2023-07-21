@@ -17,7 +17,7 @@ public class EnemyDeath : MonoBehaviour
         {
             drop = gameObject.GetComponent<Drop>();
         }
-        stats.onDeath += OnDeath;
+        stats.OnDeath += OnDeath;
     }
 
     void OnDeath()

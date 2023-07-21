@@ -30,6 +30,9 @@ public class Inventory : MonoBehaviour
     float thirdHoldTime;
     float fourthHoldTime;
 
+    public delegate void OnWeaponPickupHandler(GameObject weapon);
+    public event OnWeaponPickupHandler OnWeaponPickup;
+
     private void Awake()
     {
         GameData.inventory = this;    
@@ -58,10 +61,9 @@ public class Inventory : MonoBehaviour
         pickingUp = false;
         playerTrans = gameObject.GetComponentInParent<Transform>();
         itemsInInventory = 0;
-        weapon = null;
         items = new GameObject[itemSpace];
         weapon = emptyWeapon;
-
+        OnWeaponPickup.Invoke(weapon);
 
         firstHoldTime = 0;
         secondHoldTime = 0;
@@ -353,6 +355,7 @@ public class Inventory : MonoBehaviour
         weapon.transform.localScale = new Vector3(1.2f, 1.2f, 1f);
         weapon.GetComponent<SpriteRenderer>().enabled = false;
         weapon.GetComponent<Collider2D>().enabled = false;
+        OnWeaponPickup.Invoke(obj);
     }
 
     private void ThrowWeapon(bool isPickingUp)

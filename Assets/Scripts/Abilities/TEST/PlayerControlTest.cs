@@ -31,7 +31,8 @@ public class PlayerControlTest : MonoBehaviour
         stats = GetComponent<PlayerStatistics>();
         inventory = gameObject.GetComponentInChildren<Inventory>();
         playerRenderer = gameObject.transform.GetChild(0).GetComponent<SpriteRenderer>();
-        stats.onHealthChange += UpdateHealthBar;
+        stats.OnHealthChange += UpdateHealthBar;
+        inventory.OnWeaponPickup += OnWeaponPickup;
     }
 
     private void Update()
@@ -45,12 +46,7 @@ public class PlayerControlTest : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (inventory.GetCurrentWeapon() != weapon)
-        {
-            weapon = inventory.GetCurrentWeapon().GetComponent<WeaponTest>();
-        }
-
-        //walking controll for pad
+        //walking control for pad
 
         lookVector = DetermineLookVector();
         
@@ -65,6 +61,12 @@ public class PlayerControlTest : MonoBehaviour
         }
     }
     
+    void OnWeaponPickup(GameObject weapon)
+    {
+        this.weapon = weapon.GetComponent<WeaponTest>();
+        this.weapon.ResetEnergy();
+    }
+
     void UpdateHealthBar()
     {
         HealthBar.localScale = new Vector3(stats.GetHealth() / stats.GetMaxHealth(), 1f, 1f);

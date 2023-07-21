@@ -69,8 +69,6 @@ public class WeaponTest : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        
-        playerControl = GameObject.Find("Ifer").GetComponent<PlayerControlTest>();
         objectHit = new List<GameObject>();
         sharedObjects = new List<GameObject>();
         attackType = AttackTypes.Normal;
@@ -85,12 +83,17 @@ public class WeaponTest : MonoBehaviour
         qHoldingTime = 0f;
         eHoldingTime = 0f;
         energyTimer = 0f;
-        player = GameObject.Find("Ifer");
+        currentStamina = maxStamina;
+        InstantiateAbilities();
+    }
+
+    private void Start()
+    {
+        player = GameData.player;
+        playerControl = player.GetComponent<PlayerControlTest>();
         playerTransform = player.transform;
         playerRigidbody = player.GetComponent<Rigidbody2D>();
         playerDust = player.transform.GetChild(6).GetComponent<ParticleSystem>();
-        currentStamina = maxStamina;
-        InstantiateAbilities();
     }
 
     public void WeaponDecide()

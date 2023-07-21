@@ -13,10 +13,10 @@ public class Statistics : MonoBehaviour
     [SerializeField] private int scorePoints;
     [SerializeField] private float height;
 
-    public delegate void OnDeath();
-    public OnDeath onDeath;
-    public delegate void OnHealthChange();
-    public OnHealthChange onHealthChange;
+    public delegate void OnDeathHandler();
+    public event OnDeathHandler OnDeath;
+    public delegate void OnHealthChangeHandler();
+    public event OnHealthChangeHandler OnHealthChange;
 
     public float GetMaxHealth()
     {
@@ -31,20 +31,20 @@ public class Statistics : MonoBehaviour
     public void ResetHealth()
     {
         health = maxHealth;
-        onHealthChange.Invoke();
+        OnHealthChange.Invoke();
     }
 
     public void GetDamage(float damage)
     {
         health -= damage;
-        onHealthChange.Invoke();
+        OnHealthChange.Invoke();
         if (gameObject)
         {
             FindObjectOfType<SpawnParticles>().SpawnBloodParticles(transform.position);
         }
         if(health <= 0)
         {
-            onDeath.Invoke();
+            OnDeath.Invoke();
         }
     }
 

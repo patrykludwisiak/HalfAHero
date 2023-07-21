@@ -11,27 +11,20 @@ public class Bullet : MonoBehaviour
     [SerializeField] private float lifetime;
     [SerializeField] private float damageCooldown;
     [SerializeField] private AttackTypes attackType;
+    [SerializeField] private bool isRotating;
+    [SerializeField] private GameObject objectToRotate;
+    [SerializeField] private float rotationPerSecond;
     private float lifeTimer = 0;
     private bool dealDamage = true;
     private List<AbilityOvertime> abilitiesOvertime = new List<AbilityOvertime>();
+    private Vector3 rotationAxis;
     protected string targetTag;
- 
-    protected virtual void OnTriggerEnter2D(Collider2D collider)
+
+    private void Start()
     {
-        GameObject col = collider.gameObject;
-        OnHitDecision(col);
+        rotationAxis = new Vector3(0, 0, 1);
     }
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        if(collision.CompareTag("Enemy"))
-        {
-            int index = abilitiesOvertime.FindIndex(enemy => enemy.enemy == collision.gameObject);
-            if(index != -1)
-            {
-                abilitiesOvertime.RemoveAt(index);
-            }    
-        }
-    }
+
     private void Update()
     {
         if(destroyOnTime)
@@ -51,7 +44,36 @@ public class Bullet : MonoBehaviour
                 }
             }
         }
+        if(isRotating)
+        {
+            if (objectToRotate)
+            {
+                objectToRotate.transform.Rotate(rotationAxis, rotationPerSecond * Time.deltaTime);
+            }
+            else
+            {
+                transform.Rotate(rotationAxis, rotationPerSecond * Time.deltaTime);
+            }
+        }
     }
+
+    protected virtual void OnTriggerEnter2D(Collider2D collider)
+    {
+        GameObject col = collider.gameObject;
+        OnHitDecision(col);
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Enemy"))
+        {
+            int index = abilitiesOvertime.FindIndex(enemy => enemy.enemy == collision.gameObject);
+            if (index != -1)
+            {
+                abilitiesOvertime.RemoveAt(index);
+            }
+        }
+    }
+
     protected void OnHitDecision(GameObject col)
     {
         OnSpawnerHit(col);
