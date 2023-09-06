@@ -24,6 +24,7 @@ MonoBehaviour:
       m_WaitForCompletion: 0
       m_LocalVariables: []
     time: 3
+    dialogCharacterName: Nivek
   - characterDialogSprite: {fileID: 21300000, guid: ac9b3e4e350ca0544a9af29cbbea9de3, type: 3}
     text:
       m_TableReference:
@@ -35,6 +36,7 @@ MonoBehaviour:
       m_WaitForCompletion: 0
       m_LocalVariables: []
     time: 1
+    dialogCharacterName: Ifer
   - characterDialogSprite: {fileID: 21300000, guid: 3c408b4360e993444a835d6e1a9b810b, type: 3}
     text:
       m_TableReference:
@@ -46,6 +48,7 @@ MonoBehaviour:
       m_WaitForCompletion: 0
       m_LocalVariables: []
     time: 0.8
+    dialogCharacterName: Nivek
   - characterDialogSprite: {fileID: 21300000, guid: 3c408b4360e993444a835d6e1a9b810b, type: 3}
     text:
       m_TableReference:
@@ -57,6 +60,7 @@ MonoBehaviour:
       m_WaitForCompletion: 0
       m_LocalVariables: []
     time: 2
+    dialogCharacterName: Nivek
   isForced: 0
   references:
     version: 2

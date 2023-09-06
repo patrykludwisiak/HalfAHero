@@ -6,14 +6,23 @@ using UnityEngine.Localization.Settings;
 using UnityEngine.UI;
 using TMPro;
 
+[System.Serializable]
+public struct DialogCharacter
+{
+    public string characterName;
+    public DialogComponent dialogComponent;
+}
+
 public class DialogController : MonoBehaviour
 {
     [SerializeField] GameObject dialogCanvas;
     [SerializeField] TextMeshProUGUI dialogText;
     [SerializeField] Image dialogCharacterImage;
+    [SerializeField] List<DialogCharacter> dialogCharacters;
     float timer;
     float timerCap;
     List<DialogLine> dialogQueue;
+    DialogComponent currentDialogComponent;
 
     public delegate void OnDialogAddHandler();
     public event OnDialogAddHandler OnDialogAdd;
@@ -29,7 +38,7 @@ public class DialogController : MonoBehaviour
         timer = 0;
         timerCap = 0;
         OnDialogAdd += ShowDialogScreen;
-        OnDialogLineEnd += SetNewDialog;
+        OnDialogLineEnd += SetNextDialog;
         OnDialogEnd += HideDialogScreen;
         LocalizationSettings.SelectedLocaleChanged += Reload;
     }
@@ -53,17 +62,21 @@ public class DialogController : MonoBehaviour
     void ShowDialogScreen()
     {
         dialogCanvas.SetActive(true);
+        SetNewDialog();
     }
 
     void HideDialogScreen()
     {
         dialogCanvas.SetActive(false);
+        currentDialogComponent = null;
     }
 
     void SetNewDialog()
     {
-        dialogQueue.RemoveAt(0);
-        timer = 0;
+        if (currentDialogComponent)
+        {
+            currentDialogComponent.HideDialog();
+        }
         if (dialogQueue.Count > 0)
         {
             SetDialogValues(dialogQueue[0]);
@@ -75,6 +88,13 @@ public class DialogController : MonoBehaviour
         }
     }
 
+    void SetNextDialog()
+    {
+        dialogQueue.RemoveAt(0);
+        timer = 0;
+        SetNewDialog(); 
+    }
+
     void SetDialogValues(DialogLine line)
     {
         timerCap = line.time;
@@ -83,6 +103,15 @@ public class DialogController : MonoBehaviour
         if (sprite)
         {
             dialogCharacterImage.sprite = sprite;
+        }
+        int index = dialogCharacters.FindIndex(character => character.characterName.Equals(line.dialogCharacterName));
+        if(index != -1)
+        {
+            currentDialogComponent = dialogCharacters[index].dialogComponent;
+            if(currentDialogComponent)
+            {
+                currentDialogComponent.ShowDialog();
+            }
         }
     }
 

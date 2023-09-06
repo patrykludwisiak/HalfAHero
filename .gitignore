@@ -75,5 +75,5 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]cripts/[Uu]nused/*
 
 # Plastic
-/.plastic/
+.plastic/
 /ignore.conf

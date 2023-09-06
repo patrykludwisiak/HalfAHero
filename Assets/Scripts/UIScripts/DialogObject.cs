@@ -9,6 +9,7 @@ public struct DialogLine
     public Sprite characterDialogSprite;
     public LocalizedString text;
     public float time;
+    public string dialogCharacterName;
 }
 
 [CreateAssetMenu(fileName = "DialogObject", menuName = "DialogObject")]

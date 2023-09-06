@@ -24,6 +24,7 @@ MonoBehaviour:
       m_WaitForCompletion: 0
       m_LocalVariables: []
     time: 2
+    dialogCharacterName: Nivek
   isForced: 0
   references:
     version: 2
