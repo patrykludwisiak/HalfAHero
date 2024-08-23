@@ -137,7 +137,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6aa3f4fc0d58044babc46048aa38c33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventorySprite: {fileID: 21300000, guid: 1680701c1ad06a9459186583ad7b4792, type: 3}
+  inventorySprite: {fileID: 216905936, guid: 1680701c1ad06a9459186583ad7b4792, type: 3}
   attackType: 0
   maxEnergy: 3
   energyKeepTime: 2

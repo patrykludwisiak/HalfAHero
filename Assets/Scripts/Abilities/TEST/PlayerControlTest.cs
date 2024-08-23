@@ -19,7 +19,7 @@ public class PlayerControlTest : MonoBehaviour
         {"S", "SE", "E", "NE", "N", "NW", "W", "SW"};
     [SerializeField] private Rigidbody2D rigidBody;
     [SerializeField] private GameObject arrow;
-    [SerializeField] private Transform HealthBar;
+    [SerializeField] private RectTransform HealthBar;
 
     private void Awake()
     {
@@ -68,7 +68,9 @@ public class PlayerControlTest : MonoBehaviour
 
     void UpdateHealthBar()
     {
-        HealthBar.localScale = new Vector3(stats.GetHealth() / stats.GetMaxHealth(), 1f, 1f);
+        float width = ((RectTransform)HealthBar.parent).rect.width;
+        Vector2 rightTopCorner =  new (width - stats.GetHealth() / stats.GetMaxHealth() * width, 0);
+        HealthBar.offsetMax = -rightTopCorner;
     }
 
     public static int GetAngleIndexOfEight(Vector3 normalizedVector)

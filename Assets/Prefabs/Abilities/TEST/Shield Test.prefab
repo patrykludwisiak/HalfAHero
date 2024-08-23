@@ -83,7 +83,7 @@ SpriteRenderer:
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.24, y: 0.22}
+  m_Size: {x: 0.25, y: 0.25}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -159,7 +159,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6aa3f4fc0d58044babc46048aa38c33, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inventorySprite: {fileID: 21300000, guid: dc302a41e888af14996b0956e0b93477, type: 3}
+  inventorySprite: {fileID: 931677472, guid: 6e15b81deec1f1144bc07828076b2243, type: 3}
   attackType: 0
   maxEnergy: 3
   energyKeepTime: 2

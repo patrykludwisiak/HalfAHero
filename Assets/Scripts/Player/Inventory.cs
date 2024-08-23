@@ -1,15 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
-    GUIStyle style;
     GameObject weapon;
     GameObject[] items;
-    GameObject weaponSlot;
-    GameObject[] itemSlots;
-    Rect[] itemsCount;
+    [SerializeField] Image weaponSlot;
+    [SerializeField] Image[] itemSlots;
     List<string> weaponTags;
     Collider2D pickUpCollision;
     Transform playerTrans;
@@ -33,37 +32,33 @@ public class Inventory : MonoBehaviour
     public delegate void OnWeaponPickupHandler(GameObject weapon);
     public event OnWeaponPickupHandler OnWeaponPickup;
 
+    public delegate void OnItemsChangeHandler(GameObject item);
+    public event OnItemsChangeHandler OnItemChange;
+
     private void Awake()
     {
         GameData.inventory = this;    
     }
 
     void Start()
-    {
-        weaponSlot = GameObject.Find("Weapon1");
-        itemSlots = new GameObject[] { GameObject.Find("Item1"), GameObject.Find("Item2"), GameObject.Find("Item3"), GameObject.Find("Item4") };
-        itemsCount = new Rect[itemSpace];
-        for (int i = 0; i < itemSpace; i++)
-        {
-            Vector2 position = Camera.main.WorldToScreenPoint(itemSlots[i].transform.GetChild(0).position);
-            itemsCount[i] = new Rect(position.x + Screen.width * 0.005f, Screen.height - position.y, 10f, 10f);
-        }
+    {        
         weaponTags = new List<string>
         {
             "Shield","Sword"
         };
-        style = new GUIStyle
-        {
-            fontSize = 15
-        };
+        OnWeaponPickup += WeaponSlotUpdate;
+        OnItemChange += ItemSlotsUpdate;
         storePosition = new Vector3(10000, 10000, 0);
         zero = Vector2.zero;
         pickingUp = false;
         playerTrans = gameObject.GetComponentInParent<Transform>();
         itemsInInventory = 0;
         items = new GameObject[itemSpace];
-        weapon = emptyWeapon;
-        OnWeaponPickup.Invoke(weapon);
+        if(weapon == null)
+        {
+            weapon = emptyWeapon;
+            OnWeaponPickup.Invoke(weapon);
+        }
 
         firstHoldTime = 0;
         secondHoldTime = 0;
@@ -74,31 +69,7 @@ public class Inventory : MonoBehaviour
     private void Update()
     {
         int hold = CheckHold();
-        if (weapon == null)
-        {
-            weapon = emptyWeapon;
-        }
-        SpriteRenderer slot = weaponSlot.transform.GetChild(0).GetComponent<SpriteRenderer>();
-        if (weapon != null)
-        {
-            slot.sprite = weapon.GetComponent<WeaponTest>().GetInventorySprite();
-        }
-        else
-        {
-            slot.sprite = null;
-        }
-        for (int i = 0; i < itemSpace; i++)
-        {
-            SpriteRenderer itemSlot = itemSlots[i].transform.GetChild(0).GetComponent<SpriteRenderer>();
-            if (items[i] != null)
-            {
-                itemSlot.sprite = items[i].GetComponent<Item>().GetInventorySprite();
-            }
-            else
-            {
-                itemSlot.sprite = null;
-            }
-        }
+        
         if (!pickingUp && (Input.GetMouseButtonDown(3) || Input.GetButtonDown(PlayerControlTest.GetButtonOfControllerType("Throw"))|| hold > 0))
         {
             ThrowItem(false, hold);
@@ -174,22 +145,6 @@ public class Inventory : MonoBehaviour
             pickingUp = false;
             collision.gameObject.GetComponent<SpriteRenderer>().material = defaultMaterial;
             collision.gameObject.transform.Find("PickUpIcon").GetComponent<SpriteRenderer>().enabled = false;
-        }
-    }
-
-    private void OnGUI()
-    {
-        for (int i = 0; i < itemSpace; i++)
-        {
-            if (items[i] != null)
-            {
-                Item item = items[i].GetComponent<Item>();
-                int amount = item.GetAmount();
-                if (amount > 0)
-                {
-                    GUI.Label(itemsCount[i], item.GetAmount().ToString(), style);
-                }
-            }
         }
     }
 
@@ -340,6 +295,7 @@ public class Inventory : MonoBehaviour
                 }
             }
         }
+        OnItemChange.Invoke(obj);
     }
 
     private void PickUpWeapon(GameObject obj)
@@ -347,7 +303,7 @@ public class Inventory : MonoBehaviour
         obj.transform.Find("PickUpIcon").GetComponent<SpriteRenderer>().enabled = false;
         obj.GetComponent<SpriteRenderer>().material = defaultMaterial;
 
-        ThrowWeapon(true);
+        ThrowWeapon();
         obj.transform.parent = gameObject.transform;
         weapon = obj;
         weapon.transform.position = playerTrans.position;
@@ -358,7 +314,7 @@ public class Inventory : MonoBehaviour
         OnWeaponPickup.Invoke(obj);
     }
 
-    private void ThrowWeapon(bool isPickingUp)
+    private void ThrowWeapon()
     {
         if (weapon != null && weapon != emptyWeapon)
         {
@@ -378,7 +334,6 @@ public class Inventory : MonoBehaviour
                     thrownRigid.velocity = zero;
                 }
             }
-            print(thrownItem.GetComponent<WeaponTest>().GetInventorySprite());
             thrownItem.GetComponent<SpriteRenderer>().sprite = thrownItem.GetComponent<WeaponTest>().GetInventorySprite();
         }
     }
@@ -409,6 +364,7 @@ public class Inventory : MonoBehaviour
         }
         if(thrownItem)
         {
+            OnItemChange.Invoke(thrownItem);
             thrownItem.GetComponent<Item>().OnDrop();
             thrownItem.transform.parent = null;
             thrownItem.transform.position = playerTrans.position;
@@ -425,6 +381,37 @@ public class Inventory : MonoBehaviour
             if (!isPickingUp)
             {
                 itemsInInventory--;
+            }
+        }
+    }
+
+    private void WeaponSlotUpdate(GameObject weapon)
+    {
+        if (weapon == null)
+        {
+            this.weapon = emptyWeapon;
+        }
+        weaponSlot.sprite = weapon.GetComponent<WeaponTest>().GetInventorySprite();
+    }
+
+    private void ItemSlotsUpdate(GameObject item)
+    {
+        for (int i = 0; i < itemSpace; i++)
+        {
+            if (items[i] == item)
+            {
+                if (item == null)
+                {
+                    itemSlots[i].sprite = null;
+                    Color itemSlotColor = itemSlots[i].color;
+                    itemSlots[i].color = new(itemSlotColor.r, itemSlotColor.g, itemSlotColor.b, 0);
+                }
+                else
+                {
+                    itemSlots[i].sprite = items[i].GetComponent<Item>().GetInventorySprite();
+                    Color itemSlotColor = itemSlots[i].color;
+                    itemSlots[i].color = new(itemSlotColor.r, itemSlotColor.g, itemSlotColor.b, 1);
+                }
             }
         }
     }
