@@ -45,7 +45,6 @@ public class Dash : Ability
 
     public virtual bool Cast(float dashSpeed, List<float> dashMultipliers, Rigidbody2D rigidBody, Vector2 chargeVector, GameObject spriteObject)
     {
-        
         if (!isDashing)
         {
             spritePosition = spriteObject.transform;

@@ -141,20 +141,39 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   patrolPositions:
-  - {x: -28.62, y: 8.8, z: 0}
-  - {x: -13.8, y: 14.81, z: 0}
-  - {x: -12.38, y: 13.03, z: 0}
-  - {x: -15.05, y: 16.33, z: 0}
-  - {x: -3.58, y: 20.63, z: 0}
-  - {x: -21.27, y: 15.25, z: 0}
-  - {x: -27.49, y: 23.78, z: 0}
-  - {x: -11.08, y: 34.02, z: 0}
-  - {x: -75.6, y: 47.51, z: 0}
-  - {x: -70.54, y: 49.21, z: 0}
-  - {x: -64.69, y: 50.43, z: 0}
-  - {x: -62.55, y: 43.06, z: 0}
-  - {x: -53.8, y: 24.4, z: 0}
-  - {x: -8.65, y: 28.91, z: 0}
-  - {x: 6.03, y: 22.71, z: 0}
-  - {x: 11.63, y: 35.17, z: 0}
-  teleportPoints: 080000000d000000
+  - position: {x: -28.246971, y: 8.65817, z: 0}
+    isTeleportDestination: 0
+  - position: {x: -13.988556, y: 15.022971, z: 0}
+    isTeleportDestination: 0
+  - position: {x: -12.773546, y: 12.365136, z: 0}
+    isTeleportDestination: 0
+  - position: {x: -13.570897, y: 15.440631, z: 0}
+    isTeleportDestination: 0
+  - position: {x: -2.939557, y: 20.186764, z: 0}
+    isTeleportDestination: 0
+  - position: {x: -22.189873, y: 14.149681, z: 0}
+    isTeleportDestination: 0
+  - position: {x: -26.480377, y: 22.768661, z: 0}
+    isTeleportDestination: 0
+  - position: {x: -11.25478, y: 33.81766, z: 0}
+    isTeleportDestination: 0
+  - position: {x: -75.59969, y: 47.225525, z: 0}
+    isTeleportDestination: 1
+  - position: {x: -64.22095, y: 50.09099, z: 0}
+    isTeleportDestination: 0
+  - position: {x: -62.241802, y: 54.978264, z: 0}
+    isTeleportDestination: 0
+  - position: {x: -58.525856, y: 56.59389, z: 0}
+    isTeleportDestination: 0
+  - position: {x: -48.468563, y: 50.737236, z: 0}
+    isTeleportDestination: 0
+  - position: {x: -62.17078, y: 42.43904, z: 0}
+    isTeleportDestination: 0
+  - position: {x: -53.23467, y: 24.200527, z: 0}
+    isTeleportDestination: 0
+  - position: {x: -9.012497, y: 29.045858, z: 0}
+    isTeleportDestination: 1
+  - position: {x: 3.9538803, y: 22.426182, z: 0}
+    isTeleportDestination: 0
+  - position: {x: 11.6654625, y: 35.119583, z: 0}
+    isTeleportDestination: 0
